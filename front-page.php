@@ -47,9 +47,9 @@
           <article class="col-lg-4 blog_item my-2">
             <a class="blog_image" href="<?php the_permalink(); ?>">
               <?php echo get_the_post_thumbnail(); ?>
-              <time datetime="<?php the_time('j F Y H:i'); ?>" class="blog_date">
-                <?php the_time('j'); ?>
-                <p><?php the_time('M'); ?></p>
+              <time datetime="<?php the_time('Y-m-j H:i:s'); ?>" class="blog_date">
+                <strong><?php the_time('j'); ?></strong><br/>
+                <em><?php the_time('F'); ?></em>
               </time>
             </a>
             <h3 class="blog_title">
@@ -96,6 +96,7 @@
 
       </div>
     </div>
+  </div>
 </section>
 <!--END BLOG-->
 
@@ -119,12 +120,12 @@
               <div class="card_head" id="heading<?php echo $i ?>">
                 <button class="d-flex align-items-center <?php echo $i == 0 ? '' : 'collapsed' ?>" type="button" data-toggle="collapse" data-target="#collapse<?php echo $i ?>" aria-expanded="true" aria-controls="collapse<?php echo $i ?>">
                   <img src="<?php echo esc_url(get_sub_field('whatwedo_accordion_icon')['url']); ?>" alt="<?php echo esc_attr(get_sub_field('whatwedo_accordion_icon')['alt']); ?>">
-                  <h3><?php echo get_sub_field('whatwedo_accordion_title') ?></h3>
+                  <span class="accordion_item_title"><?php echo get_sub_field('whatwedo_accordion_title') ?></span>
                 </button>
               </div>
               <div id="collapse<?php echo $i ?>" class="collapse <?php echo $i == 0 ? 'show' : '' ?>" aria-labelledby="heading<?php echo $i ?>" data-parent="#accordionExample">
                 <div class="card_body">
-                  <p><?php echo wp_kses_post(get_sub_field('whatwedo_accordion_description')); ?></p>
+                  <?php echo wp_kses_post(get_sub_field('whatwedo_accordion_description')); ?>
                 </div>
               </div>
             </div>

@@ -1,8 +1,6 @@
 .what_we_do {
-  margin-bottom: 40px;
-
-  @include query(md) {
-    margin-bottom: 92px;
+  @include query(lg) {
+    margin-bottom: 40px;
   }
 }
 
@@ -40,7 +38,8 @@
         top: 55%;
       }
 
-      h3 {
+      .accordion_item_title {
+        @extend h3;  
         margin: 0;
       }
 
