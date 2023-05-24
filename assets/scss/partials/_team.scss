@@ -133,9 +133,9 @@
       height: 56px;
     }
   }
+}
 
-  &_author_img:hover .network_hover_list {
-    opacity: 1;
-    z-index: 16;
-  }
+.team_author_img:hover .network_hover_list {
+  opacity: 1;
+  z-index: 16;
 }

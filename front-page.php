@@ -168,7 +168,7 @@
                 <ul class="network_hover_list">
                   <?php if (get_field('member_facebook')) { ?>
                     <li>
-                      <a href="<?php the_field('team_facebook') ?>">
+                      <a href="<?php the_field('member_facebook') ?>">
                         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="26" viewBox="0 0 13 26">
                           <g>
                             <g>
