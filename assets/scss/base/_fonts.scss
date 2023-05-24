@@ -1,0 +1,26 @@
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+@mixin font-face($font-family, $file-name, $file-path, $weight, $style: normal) {
+	@font-face {
+		font-family: $font-family;
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
+		src: local('#{$file-name}'),
+		url('#{$file-path}.woff') format('woff'),
+		url('#{$file-path}.woff2') format('woff2'),
+		url('#{$file-path}.ttf') format('truetype');
+	}
+}
+$main-font: 'Montserrat';
+$secondary-font: 'Roboto';
+$decoration-font: 'KaushanScript';
+$fonts_path: '../fonts/';
+
+@include font-face($main-font, $main-font + '-Regular', $fonts_path + $main-font + '-Regular', 400); 
+@include font-face($main-font, $main-font + '-Bold', $fonts_path + $main-font + '-Bold', 700);
+@include font-face($secondary-font, $secondary-font + '-Regular', $fonts_path + $secondary-font + '-Regular', 400); 
+@include font-face($secondary-font, $secondary-font + '-Bold', $fonts_path + $secondary-font + '-Bold', 700);
+@include font-face($decoration-font, $decoration-font, $fonts_path + $decoration-font, 400);

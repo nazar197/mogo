@@ -1,0 +1,18 @@
+//--------- Helpers ---------//
+@import "helpers/vars";
+@import "helpers/mixins";
+
+//--------- General ---------//
+@import "base/fonts";
+@import "base/general";
+
+//--------- Layout ---------//
+@import "layout/header";
+
+//--------- Components ---------//
+@import "components/slider";
+
+//--------- Partials ---------//
+@import "partials/blog";
+@import "partials/what-we-do";
+@import "partials/team";

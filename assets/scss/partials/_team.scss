@@ -1,0 +1,142 @@
+.team {
+  &_list {
+    margin: 40px 0 0;
+    padding: 0;
+    margin-top: 40px;
+
+    @include query(md) {
+      margin: 92px 0 0;
+    }
+  }
+
+  &_item {
+    margin-bottom: 30px;
+
+    @include query(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &_author_img {
+    cursor: pointer;
+    background-color: $green;
+    position: relative;
+    transition: transform 0.3s;
+
+    &:after {
+      position: absolute;
+      content: '';
+      opacity: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.3s;
+    }
+
+    &:after {
+      transform: translateX(-50%);
+      left: 50%;
+      z-index: 0;
+      background: linear-gradient(to top, rgba($yellow, 0.9) 0%, rgba($red, 0.9) 100%);
+    }
+
+    &:hover:after {
+      opacity: 0.9;
+      left: 50%;
+      transform: translateX(calc(-50% - 10px)) translateY(-10px);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      z-index: 10;
+      transition: transform 0.3s;
+    }
+
+    &:hover img {
+      transform: translateX(-10px) translateY(-10px);
+    }
+  }
+
+  &_author_info {
+    margin: 31px 0 0;
+
+    a {
+      color: $dark-gray;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    p {
+      margin-top: 15px;
+      font-style: italic;
+      color: $gray;
+      line-height: normal;
+    }
+  }
+}
+
+.network_hover_list {
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s;
+  opacity: 0;
+  top: 47%;
+  left: 47%;
+  transform: translateX(-50%) translateY(-50%);
+
+  li {
+    display: block;
+    border-right: 1px solid $red;
+
+    &:last-child {
+      border-right: none
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background-color: $yellow;
+    transition: all 0.3s;
+
+    path {
+      fill: $red;
+    }
+
+    &:hover {
+      background-color: $red;
+
+      path {
+        fill: $white;
+      }
+    }
+
+    @include query(md) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @include query(lg) {
+      width: 56px;
+      height: 56px;
+    }
+  }
+  
+  &_author_img:hover .network_hover_list {
+    opacity: 1;
+    z-index: 16;
+  }
+}
